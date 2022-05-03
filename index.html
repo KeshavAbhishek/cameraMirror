@@ -39,7 +39,12 @@
 			}).catch(function(err){console.log(err)});
 		}
 		window.addEventListener('resize',()=>{
-			document.getElementById('videoParent').classList.toggle('onscreensizechange');
+			if(window.innerWidth>700){
+				document.getElementById('videoParent').classList.toggle('onscreensizechange');
+			}
+			else{
+				document.getElementById('videoParent').classList.toggle('onscreensizechange');
+			}
 		});
 	</script>
 </body>
