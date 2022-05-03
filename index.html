@@ -20,6 +20,11 @@
 			justify-content: center;
 			overflow: hidden;
 		}
+
+		.onscreensizechange{
+			width: 45vh;
+			height: 45vh;
+		}
 	</style>
 </head>
 <body>
@@ -31,8 +36,11 @@
 		if(navigator.mediaDevices.getUserMedia){
 			navigator.mediaDevices.getUserMedia({video:true}).then(function(s){
 				video.srcObject=s;
-			}).catch(function(err){console.log(err)})
+			}).catch(function(err){console.log(err)});
 		}
+		window.addEventListener('resize',()=>{
+			document.getElementById('videoParent').classList.toggle('onscreensizechange');
+		});
 	</script>
 </body>
 </html>
